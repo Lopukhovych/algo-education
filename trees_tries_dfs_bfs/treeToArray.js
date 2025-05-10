@@ -57,3 +57,15 @@ export function arrayToTree(array) {
   
   return root;
 }
+
+export function isEqual(a, b) {
+  // tslint:disable-next-line:no-console
+  console.log('a: ', a, b); // eslint-disable-line no-console
+  if (a.length !== b.length) return false;
+  
+  for(let i = 0; i< a.length; i++) {
+    if(a[i] !== b[i]) return false;
+  }
+  
+  return true;
+}

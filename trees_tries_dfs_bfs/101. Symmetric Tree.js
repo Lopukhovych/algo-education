@@ -30,6 +30,4 @@ const root = [1,2,2,null,3,null,3];
 
 const node = arrayToTree(root);
 // tslint:disable-next-line:no-console
-console.log('node: ', node); // eslint-disable-line no-console
-// tslint:disable-next-line:no-console
 console.log('isSymmetric: ', isSymmetric(node)); // eslint-disable-line no-console
