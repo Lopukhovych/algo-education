@@ -1,2 +1,2 @@
-# algo-education
+# Algo-education
 Algo-education
