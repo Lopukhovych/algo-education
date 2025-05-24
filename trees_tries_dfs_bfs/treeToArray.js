@@ -30,7 +30,7 @@ export function treeToArray(root) {
   return result;
 }
 
-export function arrayToTree(array) {
+export function arrayToBinaryTree(array) {
   if (!array?.length) return null;
   const root = new TreeNode(array[0]);
   let nodeList = new Array(array.length);

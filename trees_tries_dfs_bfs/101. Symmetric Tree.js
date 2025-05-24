@@ -6,7 +6,7 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
-import {arrayToTree} from "./treeToArray.js";
+import {arrayToBinaryTree} from "./treeToArray.js";
 
 /**
  * @param {TreeNode} root
@@ -28,6 +28,6 @@ var isMirror = (left, right) => {
 // const root = [1, 2, 2, 3, 4, 4, 3];
 const root = [1,2,2,null,3,null,3];
 
-const node = arrayToTree(root);
+const node = arrayToBinaryTree(root);
 // tslint:disable-next-line:no-console
 console.log('isSymmetric: ', isSymmetric(node)); // eslint-disable-line no-console

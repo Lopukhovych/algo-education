@@ -6,7 +6,7 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
-import {arrayToTree} from "./treeToArray.js";
+import {arrayToBinaryTree} from "./treeToArray.js";
 
 /**
  * @param {TreeNode} p
@@ -25,10 +25,10 @@ var isSameTree = function (p, q) {
 // const p = [1, 2, 3], q = [1, 2, 3];
 const p = [1, 2, 1], q = [1, 1, 2];
 
-const left = arrayToTree(p);
+const left = arrayToBinaryTree(p);
 // tslint:disable-next-line:no-console
 console.log('left: ', left); // eslint-disable-line no-console
-const right = arrayToTree(q);
+const right = arrayToBinaryTree(q);
 //
 // tslint:disable-next-line:no-console
 console.log('isSameTree: ', isSameTree(left, right)); // eslint-disable-line no-console

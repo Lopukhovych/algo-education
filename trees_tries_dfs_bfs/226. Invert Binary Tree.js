@@ -6,7 +6,7 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
-import {treeToArray, isEqual, arrayToTree} from "./treeToArray.js";
+import {treeToArray, isEqual, arrayToBinaryTree} from "./treeToArray.js";
 
 /**
  * @param {TreeNode} root
@@ -24,7 +24,7 @@ var invertTree = function(root) {
 // const root = [4,2,7,1,3,6,9], result = [4,7,2,9,6,3,1];
 const root = [2,1,3], result = [2,3,1];
 
-const node = arrayToTree(root);
+const node = arrayToBinaryTree(root);
 // tslint:disable-next-line:no-console
 // console.log('node: ', node, invertTree(node)); // eslint-disable-line no-console
 // tslint:disable-next-line:no-console
