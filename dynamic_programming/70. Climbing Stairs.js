@@ -20,6 +20,14 @@ const climb_Stairs = (i, n, memo) => {
   return memo[i];
 }
 
+// var climbStairs = function(n) {
+//   let dp = new Array(n + 1).fill(1);
+//
+//   for(let i = 2; i <= n; i++) {
+//     dp[i] = dp[i - 1] + dp[i - 2];
+//   }
+//   return dp[n];
+// };
 // Test
 const n = 2; //2
 // const n = 3; //3
