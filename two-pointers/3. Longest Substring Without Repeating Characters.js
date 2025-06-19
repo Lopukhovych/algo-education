@@ -18,11 +18,11 @@ var lengthOfLongestSubstring = function (s) {
 
 
 //test
-// const s = "abcabcbb"; // 3
+const s = "abba"; // 3
 // const s = "aa"; // 1;
 // const s = "bbbbb"; // 1;
 // const s = "pwwkew"; // 3
-const s = " "; // 1
+// const s = " "; // 1
 
 // tslint:disable-next-line:no-console
 console.log('lengthOfLongestSubstring: ', lengthOfLongestSubstring(s)); // eslint-disable-line no-console
