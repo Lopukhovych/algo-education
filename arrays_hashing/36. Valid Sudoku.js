@@ -1,33 +1,33 @@
 /**
- * @param {character[][]} board
+ * @param {string[][]} board
  * @return {boolean}
  */
 var isValidSudoku = function (board) {
   const rows = [];
-  const columns = [];
+  const cols = [];
   const boxes = {};
   
-  for(let i =0; i< board.length; i++) {
+  for (let i = 0; i < board.length; i++) {
     rows.push(new Set());
-    columns.push(new Set());
+    cols.push(new Set());
   }
   
-  for(let i =0 ; i < board.length; i++) {
-    for(let j = 0; j < board[i].length; j++) {
-      if(board[i][j] === '.') continue;
-      
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[0].length; j++) {
       let elem = board[i][j];
+      if (elem === ".") continue;
       
-      const boxIndex = `${Math.floor(i / 3)}${Math.floor(j / 3)}`;
+      if (rows[i].has(elem)) return false;
+      rows[i].add(elem);
+      if (cols[j].has(elem)) return false
+      cols[j].add(elem);
       
-      if(!boxes[boxIndex]) {
+      let boxIndex = `${Math.floor(i / 3)}${Math.floor(j / 3)}`;
+      if (!boxes[boxIndex]) {
         boxes[boxIndex] = new Set();
       }
-      if(rows[i].has(elem) || columns[j].has(elem) || boxes[boxIndex].has(elem)) {
-        return false;
-      }
-      rows[i].add(elem);
-      columns[j].add(elem);
+      
+      if (boxes[boxIndex].has(elem)) return false;
       boxes[boxIndex].add(elem);
     }
   }
@@ -59,4 +59,4 @@ const board =
 //     ,[".",".",".",".","8",".",".","7","9"]]; //false
 
 // tslint:disable-next-line:no-console
-console.log('isValidSudoku: ', isValidSudoku(board)); // eslint-disable-line no-console
+console.log('isValidSudoku: ', isValidSudoku(board1)); // eslint-disable-line no-console
