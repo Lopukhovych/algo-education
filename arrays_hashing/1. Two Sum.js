@@ -4,25 +4,30 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-	const result = [];
-	const hash = {};
-	for (let i = 0; i < nums.length; i++) {
-		const diff = target - nums[i];
-		if (diff < 0) continue;
-		if (hash[diff] !== undefined) {
-			result.push(hash[diff], i);
-			delete hash[diff]
-		} else {
-			hash[nums[i]] = i;
-		}
-	}
+  const hash = {};
 
-	return result;
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i];
+
+    if (hash[diff] !== undefined) {
+      return [hash[diff], i];
+    }
+
+    hash[nums[i]] = i;
+  }
+
+  return [];
 };
 
-
-// Test
-// const nums = [2, 7, 11, 15], target = 9; // [0,1]
-const nums = [3, 2, 4], target = 6; // [1,2]
-// tslint:disable-next-line:no-console
-console.log('twoSum: ', twoSum(nums, target)); // eslint-disable-line no-console
+// Test cases with various scenarios including negative numbers
+console.log("twoSum [2, 7, 11, 15], target 9:", twoSum([2, 7, 11, 15], 9)); // [0,1]
+console.log("twoSum [3, 2, 4], target 6:", twoSum([3, 2, 4], 6)); // [1,2]
+console.log("twoSum [3, 3], target 6:", twoSum([3, 3], 6)); // [0,1]
+console.log(
+  "twoSum [-1, 0, 1, 2, -1, -4], target 0:",
+  twoSum([-1, 0, 1, 2, -1, -4], 0),
+); // [0,2]
+console.log("twoSum [-3, 4, 3, 90], target 0:", twoSum([-3, 4, 3, 90], 0)); // [0,2]
+console.log("twoSum [-2, 1, 2, 4], target 2:", twoSum([-2, 1, 2, 4], 2)); // [0,2] or [1,3]
+console.log("twoSum [1, 2, 3, 4, 5], target 8:", twoSum([1, 2, 3, 4, 5], 8)); // [2,4]
+console.log("twoSum [5, 5, 5, 5], target 10:", twoSum([5, 5, 5, 5], 10)); // [0,1]
